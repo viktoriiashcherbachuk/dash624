@@ -29,7 +29,9 @@ mkvirtualenv dash624env --python=/usr/bin/python3.10
 16. Under the "Virtualenv:" heading write what you named your environment (still in the web tab of pythonanywhere)
 17. Uncer the "Code:" heading click on the "WSGI configuration file:" link to edit the file, and change 
 
-`from dashboard import app as application`
+``` python
+from dashboard import app as application
+```
 
 to
 
