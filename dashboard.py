@@ -8,8 +8,8 @@ from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
@@ -99,110 +99,110 @@ fig1.update_layout(width=800,height=1000)
 
 
 #Figure 2
-fig, axes = plt.subplots(2,2,figsize=(13, 9.5))
-sns.set_style("darkgrid")
-plt.subplots_adjust(wspace=0.5, hspace=0.1)
-ax=sns.stripplot(data=df1, x='Gender', y="Calcium", hue='Gender',order=[ "Male", "Female"],ax = axes[0,0])
-ay=sns.stripplot(data=df1, x='Gender', y="Glucose", hue='Gender',order=[ "Male", "Female"],ax = axes[0,1])
-ar=sns.stripplot(data=df1, x='Gender', y="Creatinine", hue='Gender',order=["Male", "Female"],ax = axes[1,0])
-ak=sns.stripplot(data=df1, x='Gender', y="SaO2", hue='Gender',order=[ "Male", "Female"],ax = axes[1,1])
-#title
-#axes[0,0].set_title ("Figure 2. Lab test results related to hypertension between the sexes")
+# fig, axes = plt.subplots(2,2,figsize=(13, 9.5))
+# sns.set_style("darkgrid")
+# plt.subplots_adjust(wspace=0.5, hspace=0.1)
+# ax=sns.stripplot(data=df1, x='Gender', y="Calcium", hue='Gender',order=[ "Male", "Female"],ax = axes[0,0])
+# ay=sns.stripplot(data=df1, x='Gender', y="Glucose", hue='Gender',order=[ "Male", "Female"],ax = axes[0,1])
+# ar=sns.stripplot(data=df1, x='Gender', y="Creatinine", hue='Gender',order=["Male", "Female"],ax = axes[1,0])
+# ak=sns.stripplot(data=df1, x='Gender', y="SaO2", hue='Gender',order=[ "Male", "Female"],ax = axes[1,1])
+# #title
+# #axes[0,0].set_title ("Figure 2. Lab test results related to hypertension between the sexes")
 
-sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1), title="Gender")
-sns.move_legend(ay, "upper left", bbox_to_anchor=(1, 1), title="Gender")
-sns.move_legend(ar, "upper left", bbox_to_anchor=(1, 1), title="Gender")
-sns.move_legend(ak, "center left", bbox_to_anchor=(1, 0.5), title="Gender")
+# sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1), title="Gender")
+# sns.move_legend(ay, "upper left", bbox_to_anchor=(1, 1), title="Gender")
+# sns.move_legend(ar, "upper left", bbox_to_anchor=(1, 1), title="Gender")
+# sns.move_legend(ak, "center left", bbox_to_anchor=(1, 0.5), title="Gender")
 
-#axis
-ax.set(xlabel = None, ylabel = 'Calcium (mg/dL)')
-ay.set(xlabel = None, ylabel = 'Serum glucose (mg/dL)')
-ar.set(xlabel = None, ylabel = 'Creatinine (mg/dL)')
-ak.set(xlabel = None, ylabel = 'Oxygen saturation from arterial blood (%)')
+# #axis
+# ax.set(xlabel = None, ylabel = 'Calcium (mg/dL)')
+# ay.set(xlabel = None, ylabel = 'Serum glucose (mg/dL)')
+# ar.set(xlabel = None, ylabel = 'Creatinine (mg/dL)')
+# ak.set(xlabel = None, ylabel = 'Oxygen saturation from arterial blood (%)')
 
-ax.axhline(y=8.5,linewidth=0.4, color='#0c2c84',linestyle='--')
-ax.axhline(y=10.2,linewidth=0.4, color='#0c2c84',linestyle='--')
-ax.text(1.5, 9.5,'normal level range', fontsize=8) #add text
-ax.text(0.2,7.5,'63.4%', fontsize=8) #add text
-ax.text(0.15,5.3,'below the normal level', fontsize=8) #add text
-ax.text(1.2,7.5,'65.7%', fontsize=8) #add text
+# ax.axhline(y=8.5,linewidth=0.4, color='#0c2c84',linestyle='--')
+# ax.axhline(y=10.2,linewidth=0.4, color='#0c2c84',linestyle='--')
+# ax.text(1.5, 9.5,'normal level range', fontsize=8) #add text
+# ax.text(0.2,7.5,'63.4%', fontsize=8) #add text
+# ax.text(0.15,5.3,'below the normal level', fontsize=8) #add text
+# ax.text(1.2,7.5,'65.7%', fontsize=8) #add text
 
 
-ay.axhline(y=140,linewidth=0.5, color='#0c2c84',linestyle='--')
-ay.text(1.5, 100,'normal level range 140↓', fontsize=8) #add text
-ay.text(0.2,200,'33.6%', fontsize=8) #add text
-ay.text(1.2,200,'31.0%', fontsize=8) #add text
+# ay.axhline(y=140,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ay.text(1.5, 100,'normal level range 140↓', fontsize=8) #add text
+# ay.text(0.2,200,'33.6%', fontsize=8) #add text
+# ay.text(1.2,200,'31.0%', fontsize=8) #add text
 
-ar.axhline(y=0.74,linewidth=0.5, color='#0c2c84',linestyle='--')
-ar.axhline(y=1.35,linewidth=0.5, color='#0c2c84',linestyle='--')
-ar.axhline(y=0.59,linewidth=0.5, color='#FFA500',linestyle='--')
-ar.axhline(y=1.04,linewidth=0.5, color='#FFA500',linestyle='--')
-ar.text(1.5, 1.3,'normal level range (M)', fontsize=8) #add text
-ar.text(1.5, 0.7,'normal level range (F)', fontsize=8) #add text
-ar.text(0.2,3.0,'20.3%', fontsize=8) #add text
-ar.text(1.2,3.0,'46.5%', fontsize=8) #add text
+# ar.axhline(y=0.74,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ar.axhline(y=1.35,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ar.axhline(y=0.59,linewidth=0.5, color='#FFA500',linestyle='--')
+# ar.axhline(y=1.04,linewidth=0.5, color='#FFA500',linestyle='--')
+# ar.text(1.5, 1.3,'normal level range (M)', fontsize=8) #add text
+# ar.text(1.5, 0.7,'normal level range (F)', fontsize=8) #add text
+# ar.text(0.2,3.0,'20.3%', fontsize=8) #add text
+# ar.text(1.2,3.0,'46.5%', fontsize=8) #add text
 
-ak.axhline(y=94,linewidth=0.5, color='#0c2c84',linestyle='--')
-ak.text(1.5, 94,'normal level range 94% ↑', fontsize=8) #add text
-ak.text(0.2,85,'38.7%', fontsize=8) #add text
-ak.text(1.2,85,'37.7%', fontsize=8) #add text
+# ak.axhline(y=94,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ak.text(1.5, 94,'normal level range 94% ↑', fontsize=8) #add text
+# ak.text(0.2,85,'38.7%', fontsize=8) #add text
+# ak.text(1.2,85,'37.7%', fontsize=8) #add text
 
-plt.show()
+# plt.show()
 
 
 # In[12]:
 
 
 #Figure 3
-fig, axes = plt.subplots(4,1,figsize=(4, 18))
-sns.set_style("darkgrid")
-ax=sns.violinplot(data=df1, x='Age_group', y="Calcium", hue='Age_group',order=[ "18-39", "40-60", "61 or older"],width=0.9, ax = axes[0])
-ay=sns.violinplot(data=df1, x='Age_group', y="Glucose", hue='Age_group',order=[ "18-39", "40-60", "61 or older"], width=0.9,ax = axes[1])
-ar=sns.violinplot(data=df1, x='Age_group', y="Creatinine", hue='Age_group',order=[ "18-39", "40-60", "61 or older"],width=0.9, ax = axes[2])
-ak=sns.violinplot(data=df1, x='Age_group', y="SaO2", hue='Age_group',order=[ "18-39", "40-60", "61 or older"], width=0.9, ax = axes[3])
-#title
-axes[0].set_title ("Figure 3. Lab test results related to hypertension among various age groups")
-#legend
-sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1), title="Age group")
-sns.move_legend(ay, "upper left", bbox_to_anchor=(1, 1), title="Age group")
-sns.move_legend(ar, "upper left", bbox_to_anchor=(1, 1), title="Age group")
-sns.move_legend(ak, "upper left", bbox_to_anchor=(1, 1), title="Age group")
+# fig, axes = plt.subplots(4,1,figsize=(4, 18))
+# sns.set_style("darkgrid")
+# ax=sns.violinplot(data=df1, x='Age_group', y="Calcium", hue='Age_group',order=[ "18-39", "40-60", "61 or older"],width=0.9, ax = axes[0])
+# ay=sns.violinplot(data=df1, x='Age_group', y="Glucose", hue='Age_group',order=[ "18-39", "40-60", "61 or older"], width=0.9,ax = axes[1])
+# ar=sns.violinplot(data=df1, x='Age_group', y="Creatinine", hue='Age_group',order=[ "18-39", "40-60", "61 or older"],width=0.9, ax = axes[2])
+# ak=sns.violinplot(data=df1, x='Age_group', y="SaO2", hue='Age_group',order=[ "18-39", "40-60", "61 or older"], width=0.9, ax = axes[3])
+# #title
+# axes[0].set_title ("Figure 3. Lab test results related to hypertension among various age groups")
+# #legend
+# sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1), title="Age group")
+# sns.move_legend(ay, "upper left", bbox_to_anchor=(1, 1), title="Age group")
+# sns.move_legend(ar, "upper left", bbox_to_anchor=(1, 1), title="Age group")
+# sns.move_legend(ak, "upper left", bbox_to_anchor=(1, 1), title="Age group")
 
-#axis
-ax.set(xlabel = None, ylabel = 'Calcium (mg/dL)')
-ay.set(xlabel = None, ylabel = 'Serum glucose (mg/dL)')
-ar.set(xlabel = None, ylabel = 'Creatinine (mg/dL)')
-ak.set(xlabel = None, ylabel = 'Oxygen saturation from arterial blood (%)')
+# #axis
+# ax.set(xlabel = None, ylabel = 'Calcium (mg/dL)')
+# ay.set(xlabel = None, ylabel = 'Serum glucose (mg/dL)')
+# ar.set(xlabel = None, ylabel = 'Creatinine (mg/dL)')
+# ak.set(xlabel = None, ylabel = 'Oxygen saturation from arterial blood (%)')
 
-#lines indication normal level for each lab test
-ax.axhline(y=8.5,linewidth=0.4, color='#0c2c84',linestyle='--')
-ax.axhline(y=10.2,linewidth=0.4, color='#0c2c84',linestyle='--')
-ax.text(1.9, 9.5,'normal level range', fontsize=8) #add text
-ax.text(0.2,7.5,'69.4% patients', fontsize=8) #add text
-ax.text(0.1,7,'below the normal level', fontsize=8) #add text
-ax.text(1.35,6,'65.2%', fontsize=8) #add text
-ax.text(1.8,6,'64.4%', fontsize=8) #add text
+# #lines indication normal level for each lab test
+# ax.axhline(y=8.5,linewidth=0.4, color='#0c2c84',linestyle='--')
+# ax.axhline(y=10.2,linewidth=0.4, color='#0c2c84',linestyle='--')
+# ax.text(1.9, 9.5,'normal level range', fontsize=8) #add text
+# ax.text(0.2,7.5,'69.4% patients', fontsize=8) #add text
+# ax.text(0.1,7,'below the normal level', fontsize=8) #add text
+# ax.text(1.35,6,'65.2%', fontsize=8) #add text
+# ax.text(1.8,6,'64.4%', fontsize=8) #add text
 
-ay.axhline(y=140,linewidth=0.5, color='#0c2c84',linestyle='--')
-ay.text(1.9, 100,'normal level range 140↓', fontsize=8) #add text
-ay.text(0.1,200,'26.7%', fontsize=8) #add text
-ay.text(1.35,200,'35.3%', fontsize=8) #add text
-ay.text(1.8,200,'31.3%', fontsize=8) #add text
+# ay.axhline(y=140,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ay.text(1.9, 100,'normal level range 140↓', fontsize=8) #add text
+# ay.text(0.1,200,'26.7%', fontsize=8) #add text
+# ay.text(1.35,200,'35.3%', fontsize=8) #add text
+# ay.text(1.8,200,'31.3%', fontsize=8) #add text
 
-ar.axhline(y=0.84,linewidth=0.5, color='#0c2c84',linestyle='--')
-ar.axhline(y=1.21,linewidth=0.5, color='#0c2c84',linestyle='--')
-ar.text(1.9, 1.5,'normal level range', fontsize=8) #add text
-ar.text(0.1,5,'19.4%', fontsize=8) #add text
-ar.text(1.35,5,'18.7%', fontsize=8) #add text
-ar.text(1.8,5,'13%', fontsize=8) #add text
+# ar.axhline(y=0.84,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ar.axhline(y=1.21,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ar.text(1.9, 1.5,'normal level range', fontsize=8) #add text
+# ar.text(0.1,5,'19.4%', fontsize=8) #add text
+# ar.text(1.35,5,'18.7%', fontsize=8) #add text
+# ar.text(1.8,5,'13%', fontsize=8) #add text
 
-ak.axhline(y=94,linewidth=0.5, color='#0c2c84',linestyle='--')
-ak.text(1.2, 105,'normal level range 94% ↑', fontsize=8) #add text
-ak.text(0.1,80,'20.7%', fontsize=8) #add text
-ak.text(1.35,80,'18%', fontsize=8) #add text
-ak.text(1.8,80,'21%', fontsize=8) #add text
+# ak.axhline(y=94,linewidth=0.5, color='#0c2c84',linestyle='--')
+# ak.text(1.2, 105,'normal level range 94% ↑', fontsize=8) #add text
+# ak.text(0.1,80,'20.7%', fontsize=8) #add text
+# ak.text(1.35,80,'18%', fontsize=8) #add text
+# ak.text(1.8,80,'21%', fontsize=8) #add text
 
-plt.show()
+# plt.show()
 
 
 # In[ ]:
