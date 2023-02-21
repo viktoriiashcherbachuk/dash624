@@ -29,7 +29,7 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 # In[3]:
 
 
-df = pd.read_csv('Data/2023-02-08-DATA624-Assignment4-Data.csv')
+df = pd.read_csv('2023-02-08-DATA624-Assignment4-Data.csv')
 
 
 # In[4]:
